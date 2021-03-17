@@ -16,15 +16,9 @@
 
 ## Usage
 
-Load the skin from Rainmeter's skin menu. The skin UI should appear on your desktop if everything was installed properly.
+**RPC:** Load the skin from Rainmeter's skin menu. The skin UI should appear on your desktop if everything was installed properly. `valmeter` will automatically watch your computer's open processes and start the Rich Prescense when `RiotClientServices.exe` and `VALORANT.exe` are running.
 
-**RPC:** 
-
-`valmeter` will automatically watch your computer's open processes and start the Rich Prescense when `RiotClientServices.exe` and `VALORANT.exe` are running.
-
-**Settings:**
-
-Load the `Settings/settings.ini` skin or click the cog on the `valmeter.ini` skin to open the settings menu. Here you can configure your game's location path, RPC update interval, etc.
+**Settings:** Load the `Settings/settings.ini` skin or click the cog on the `valmeter.ini` skin to open the settings menu. Here you can configure your game's location path, RPC update interval, etc.
 
 ## Developement & Contributing
 
