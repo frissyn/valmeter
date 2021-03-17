@@ -9,3 +9,7 @@ Measure=Plugin
 Plugin=Process
 ProcessName=VALORANT.exe
 Substitute="-1":"Not Running","1":"Running"
+
+[RPCScript]
+Measure=Script
+ScriptFile=[#@]Scripts/rpc.lua
