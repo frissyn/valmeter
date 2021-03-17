@@ -1,0 +1,4 @@
+*.lua linguist-language=Lua
+*.ini linguist-language=INI
+*.inc linguist-language=Pawn
+*.ps1 linguist-language=Powershell
