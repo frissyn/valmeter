@@ -8,4 +8,4 @@ Substitute="-1":"Not Running","1":"Running"
 Measure=Plugin
 Plugin=Process
 ProcessName=VALORANT.exe
-Substitute="-1":"Not running","1":"Running"
+Substitute="-1":"Not Running","1":"Running"
