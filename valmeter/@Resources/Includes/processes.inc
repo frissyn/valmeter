@@ -12,4 +12,4 @@ Substitute="-1":"Not Running","1":"Running"
 
 [RPCScript]
 Measure=Script
-ScriptFile=[#@]Scripts/rpc.lua
+ScriptFile=[#@]Scripts/runner.lua
