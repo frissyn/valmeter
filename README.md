@@ -1,6 +1,7 @@
 # valmeter
 
-**Fully-featured Discord RPC for VALORANT powered by Rainmeter and Lua.**
+**Fully-featured Discord RPC for VALORANT powered by Rainmeter and Lua.** 
+[*Still a work in progress, nothing works yet lol*]
 
 ## Installation
 
