@@ -1,8 +1,10 @@
 function Update()
-    local gameProc = SKIN:GetMeasure('GameProcess')
-    local clientProc = SKIN:GetMeasure('ClientProcess')
+    local gameProc = SKIN:GetMeasure('GameProcess'):GetValue()
+    local clientProc = SKIN:GetMeasure('ClientProcess'):GetValue()
 
-    if gameProc:GetValue() == 1 and clientProc:GetValue() == 1 then
+    if gameProc == 0 and clientProc == 1 then
+        SKIN:Bang('!SetOption', 'RPCMeter', 'Text', 'RPC: Loading...')
+    elseif gameProc = 1 and clientProc == 1 then
         SKIN:Bang('!SetOption', 'RPCMeter', 'Text', 'RPC: Active!')
     else
         SKIN:Bang('!SetOption', 'RPCMeter', 'Text', 'RPC: Inactive!')
