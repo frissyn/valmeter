@@ -5,7 +5,7 @@
     },
     "rpc": {
         "client_id": 821424938526441562,
-        "refresh_interval": "750ms",
+        "refresh_interval": "750",
         "base_url": "https://127.0.0.1",
         "prescense_path": "/chat/v4/presences",
         "session_path": "/chat/v1/session"
