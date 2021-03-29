@@ -16,7 +16,7 @@ function Update()
 
         if not Running then
             Running = true
-            os.execute(table.concat({'node', Script}, " "))
+            CMD = table.concat({"npm", "start"}, " ")
         end
     else
         SKIN:Bang('!SetOption', 'RPCMeter', 'Text', 'RPC: Inactive!')

@@ -1,0 +1,22 @@
+{
+  "name": "valmeter",
+  "version": "0.0.1",
+  "description": "Fully-featured Discord RPC for VALORANT powered by Rainmeter and Lua.",
+  "main": "presence.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frissyn/valmeter.git"
+  },
+  "author": "frissyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frissyn/valmeter/issues"
+  },
+  "homepage": "https://github.com/frissyn/valmeter#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
