@@ -1,7 +1,8 @@
 {
     "paths": {
         "client": "C:/Riot Games/Riot Client/RiotClientServices.exe",
-        "valorant": "C:/Riot Games/VALORANT/live/VALORANT.exe"
+        "valorant": "C:/Riot Games/VALORANT/live/VALORANT.exe",
+        "lockfile": "C:/"
     },
     "rpc": {
         "client_id": 821424938526441562,
