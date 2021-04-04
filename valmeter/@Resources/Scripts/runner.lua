@@ -1,8 +1,9 @@
 function Initialize()
     Running = false
-    Script = SKIN:GetVariable('@')..'Scripts\\presence.js'
+    BaseCMD = "C:\\Windows\\System32\\cmd.exe"
+    Script = SKIN:GetVariable("@").."Scripts\\presence.js"
 
-    print('Found Script: ' .. Script)
+    print("Found Script: "..Script)
 end
 
 function Update()
@@ -16,7 +17,7 @@ function Update()
 
         if not Running then
             Running = true
-            CMD = table.concat({"npm", "start"}, " ")
+            os.execute(table.concat({"command.bat"}), " ")
         end
     else
         SKIN:Bang('!SetOption', 'RPCMeter', 'Text', 'RPC: Inactive!')

@@ -80,7 +80,7 @@ class LocalValorantClient {
     }
 
     parseToRPC(presence) {
-        let result = {instance: true};
+        let result = {instance: true, largeImageKey: "valorant"};
 
         result["partySize"] = presence["partySize"];
         result["partyMax"] = presence["maxPartySize"];
@@ -115,5 +115,6 @@ console.log("Started listening for RPC Updates.");
 setInterval(() => {
     client.getGamePresence().then((res) => {
         RPC.updatePresence(client.parseToRPC(res));
+        console.log("RPC Updated.");
     })
 }, 1050);
