@@ -80,7 +80,7 @@ class LocalValorantClient {
     }
 
     parseToRPC(presence) {
-        let result = {instance: true, largeImageKey: "valorant"};
+        let result = {instance: true, largeImageKey: "valorant", raw: presence};
 
         result["partySize"] = presence["partySize"];
         result["partyMax"] = presence["maxPartySize"];
@@ -91,15 +91,15 @@ class LocalValorantClient {
                 result["details"] = "In Game Menu";
             } else {
                 result["state"] = "Looking For Match";
-                result["details"] = `In ${GAME_DATA.queues[presence["queueId"]]} Menu`;
+                result["details"] = `${GAME_DATA.queues[presence["queueId"]]} Lobby`;
             }
         } else if (presence["sessionLoopState"] == "INGAME") {
             let m = presence["matchMap"].split("/");
             let mapName = GAME_DATA.maps[m[m.length - 1]]
 
-            result["state"] = `Playing ${GAME_DATA.queues[presence["queueId"]]}`;
-            result["details"] = `On ${mapName} (${presence["partyOwnerMatchScoreAllyTeam"]} - ${presence["partyOwnerMatchScoreEnemyTeam"]})`
-            result["startTimestamp"] = Date.parse(presence["queueEntryTime"].replace(".", " "));
+            result["state"] = `${GAME_DATA.queues[presence["queueId"]]}`;
+            result["details"] = `${mapName} (${presence["partyOwnerMatchScoreAllyTeam"]} - ${presence["partyOwnerMatchScoreEnemyTeam"]})`
+            // result["startTimestamp"] = Date.parse(presence["queueEntryTime"].replace(".", " "));
         }
 
         return result;
@@ -113,8 +113,15 @@ const client = new LocalValorantClient();
 console.log("Started listening for RPC Updates.");
 
 setInterval(() => {
-    client.getGamePresence().then((res) => {
-        RPC.updatePresence(client.parseToRPC(res));
-        console.log("RPC Updated.");
+    client.getGamePresence()
+    .then((res) => {
+        const data = client.parseToRPC(res)
+        RPC.updatePresence(client.parseToRPC(res))
+        console.log("RPC Updated.  -- ", res["queueEntryTime"].replace("\.", " "))
+    })
+    .catch((err) => {
+        console.log("Encoutered Error: ", err)
+        console.log("Exiting silently...")
+        process.exit(1)
     })
 }, 1050);
